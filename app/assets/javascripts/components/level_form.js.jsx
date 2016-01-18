@@ -11,8 +11,8 @@ var LevelForm = React.createClass({
     map: React.PropTypes.string
   },
   newLevel: function(e) {
-    if (this.refs.name.value === '') { 
-      alert('You need to add a title to your level ' + this.refs.name.value);
+    if (this.refs.game_name.value === '') { 
+      alert('You need to add a title to your level ' + this.refs.game_name.value);
       e.preventDefault();
     }
     
