@@ -11,6 +11,15 @@ var LevelForm = React.createClass({
     map: React.PropTypes.string
   },
   newLevel: function() {
+    if (this.state.name === '') { 
+      alert('You need to add a title to your level');
+      return false;
+    }
+    
+    if (check_tile(2, 2)) {
+      alert('This level isn\'t able to completed, fix the issues and try submitting again');
+      return false;
+    }
     this.refs.map.value = grid;
     this.refs.width.value = grid[0].length;
     return true;
