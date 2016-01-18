@@ -1,4 +1,3 @@
-var map = grid;
 var curr_x = 2;
 var curr_y = 2;
 var found_end = false;
@@ -11,7 +10,7 @@ var prev_direction = '';
 var prev_direction_times = 0;
 
 function check_tile(x, y) {
-  var current_tile = map[y][x];
+  var current_tile = grid[y][x];
   console.log(x, y);
   if (current_tile === end_index) return true;
   if (!tiles_to_check[current_tile]) return false;
