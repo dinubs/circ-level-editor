@@ -11,8 +11,8 @@ var LevelForm = React.createClass({
     map: React.PropTypes.string
   },
   newLevel: function(e) {
-    if (!this.state.name) { 
-      alert('You need to add a title to your level ' + this.state.name);
+    if (!this.refs.name.value) { 
+      alert('You need to add a title to your level ' + this.refs.name.value);
       e.preventDefault();
     }
     
@@ -20,6 +20,8 @@ var LevelForm = React.createClass({
       alert('This level isn\'t able to completed, fix the issues and try submitting again');
       e.preventDefault();
     }
+    checked = [];
+    
     this.refs.map.value = grid;
     this.refs.width.value = grid[0].length;
     return true;
@@ -29,7 +31,7 @@ var LevelForm = React.createClass({
       <form className='' method='post' action={'/games/' + this.props.token} onSubmit={this.newLevel.bind(this)} ref='game_form'>
         <a href='/' className='logo'>Circ</a>
         <div className='right'>
-          <input type='text' name='game[name]' value={this.state.name} placeholder='Level Name' />
+          <input type='text' name='game[name]' value={this.props.name} placeholder='Level Name' ref='game_name' />
           <input type='hidden' name='game[map]' value={JSON.stringify(grid)} ref='map' />
           <input type='hidden' name='width' value={JSON.stringify(grid)} ref='width' />
           <input type='submit' value='Submit' />

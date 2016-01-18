@@ -11,7 +11,6 @@ var prev_direction_times = 0;
 
 function check_tile(x, y) {
   var current_tile = grid[y][x];
-  console.log(x, y);
   if (current_tile === end_index) return true;
   if (!tiles_to_check[current_tile]) return false;
   if (checked.indexOf(x + '' + y) > -1) return false;
