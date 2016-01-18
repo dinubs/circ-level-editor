@@ -27,7 +27,7 @@ var LevelForm = React.createClass({
     return true;
   },
   handleChange: function(e) {
-    this.setState({value: e.target.value});
+    this.setState({name: e.target.value});
   },
   render: function() {
     return (
