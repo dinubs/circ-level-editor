@@ -12,7 +12,7 @@ var LevelForm = React.createClass({
   },
   newLevel: function(e) {
     if (!this.state.name) { 
-      alert('You need to add a title to your level');
+      alert('You need to add a title to your level ' + this.state.name);
       e.preventDefault();
     }
     
@@ -26,7 +26,7 @@ var LevelForm = React.createClass({
   },
   render: function() {
     return (
-      <form className='' method='post' action={'/games/' + this.props.token} onSubmit={this.newLevel} ref='game_form'>
+      <form className='' method='post' action={'/games/' + this.props.token} onSubmit={this.newLevel.bind(this)} ref='game_form'>
         <a href='/' className='logo'>Circ</a>
         <div className='right'>
           <input type='text' name='game[name]' value={this.state.name} placeholder='Level Name' />
