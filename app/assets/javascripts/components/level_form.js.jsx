@@ -11,7 +11,7 @@ var LevelForm = React.createClass({
     map: React.PropTypes.string
   },
   newLevel: function(e) {
-    if (!this.refs.name.value) { 
+    if (this.refs.name.value === '') { 
       alert('You need to add a title to your level ' + this.refs.name.value);
       e.preventDefault();
     }
@@ -28,7 +28,7 @@ var LevelForm = React.createClass({
   },
   render: function() {
     return (
-      <form className='' method='post' action={'/games/' + this.props.token} onSubmit={this.newLevel.bind(this)} ref='game_form'>
+      <form className='' method='post' action={'/games/' + this.props.token} onSubmit={this.newLevel} ref='game_form'>
         <a href='/' className='logo'>Circ</a>
         <div className='right'>
           <input type='text' name='game[name]' value={this.props.name} placeholder='Level Name' ref='game_name' />
