@@ -1,0 +1,99 @@
+@import "variables";
+@import "mixins";
+@import "susy";
+@import "breakpoint";
+@import "base";
+@import "typography";
+@import "forms";
+@import "session";
+@import "flashes";
+@import "navigation";
+@import "games";
+@import "level_listing";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+html, body { height: 100%; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  color: $font-color;
+  padding-bottom: 3em;
+  font-family: 'Open Sans', sans-serif;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @include container;
+  @include show-grid(overlay);
+}
+
+canvas {
+  &#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+.intro_tag {
+  color: #fff;
+  display: inline-block;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  
+  transform: translate(-50%, -50%);
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  letter-spacing: 3px;
+  font-size: 3em;
+  
+  opacity: 0;
+  
+  &.active {
+    animation: animate_in 2s linear;
+  }
+}
+@keyframes animate_in {
+  0% {
+    left: 60%;
+    opacity: 0;
+  }
+  25% {
+    left: 50%;
+    opacity: 1;
+  }
+  75% {
+    left: 50%;
+    opacity: 1;
+  }
+  100% {
+    left: 40%;
+    opacity: 0;
+  }
+}

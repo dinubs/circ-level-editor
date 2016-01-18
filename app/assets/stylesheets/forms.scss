@@ -1,0 +1,103 @@
+form {
+  max-width: 620px;
+}
+
+.input {
+  width: 100%;
+  max-width: 100%;
+}
+.input-group {
+  overflow: hidden;
+}
+
+input, label, textarea {
+  display: block;
+  @include font-size(1.8);
+}
+
+input[type='text'], input[type='email'], input[type='password'],
+textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 4rem;
+}
+
+.checkbox {
+  input[type='checkbox']{
+    display: inline-block;
+    width: auto;
+    top: 6px;
+    margin-right: 1.5rem;
+  }
+}
+
+
+textarea {
+  min-height: 200px;
+}
+
+.input__name, .input__email {
+  width: 100%;
+  float: none;
+  @include breakpoint($ipads){
+    width: 48%;
+    float: left;
+  }
+}
+
+@include breakpoint($ipads){
+  .input__name { margin-right: 2%; }
+  .input__email { margin-left: 2%; }
+}
+
+
+label {
+  line-height: 3rem;
+  margin: 2rem 0 0.5rem 0;
+}
+
+input, textarea {
+  background-color: darken(white, 10);
+  border-radius: 2px;
+  border: 1px solid darken(white, 5);
+  padding: 1rem;
+  color: lighten(#333, 5);
+  &:focus {
+    outline: 1px solid darken(white, 10);
+    box-shadow: none;
+    background-color: darken(white, 5);
+  }
+}
+
+input[type='submit']{
+  background-color: $button-color;
+  border-radius: 3px;
+  border: 1px solid darken($button-color, 1);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1.5rem 2rem;
+  font-size: 2rem;
+  margin: 1rem 0;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  &:hover {
+    background-color: darken($button-color, 10);
+    outline: 1px solid darken($button-color, 2);
+  }
+}
+
+
+::-webkit-input-placeholder {
+  color: darken(#172C38, 5);
+}
+:-moz-placeholder { /* older Firefox*/
+  color: darken(#172C38, 5);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: darken(#172C38, 5);
+}
+:-ms-input-placeholder {
+  color: darken(#172C38, 5);
+}

@@ -1,0 +1,23 @@
+<div class="session__wrapper">
+  <div class="session__header">
+    <h1>Sign Up</h1>
+  </div>
+  <div class="session__container">
+    <%= form_tag users_path, :method => :post do %>
+      <div class="field">
+        <%= label :user, :username %>
+        <%= text_field :user, :username %>
+      </div>
+      <div class="field">
+        <%= label :user, :password %>
+        <%= password_field :user, :password %>
+      </div>
+      <div class="actions">
+        <%= submit_tag "Login" %>
+      </div>
+    <% end %>
+    <p>
+      Already have an account, <%= link_to "Login", login_path %>
+    </p>
+  </div>
+</div>

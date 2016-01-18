@@ -1,0 +1,32 @@
+.level-item {
+  @include span(4);
+  padding: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(black, 0.4);
+    padding: 5px 10px;
+    width: 100%;
+    color: #fff;
+    @include font-size(2.4);
+    transition: all 0.3s;
+
+    .level-item__sub-text {
+      @include font-size(1.4);
+      margin-top: 5px;
+    }
+  }
+
+  &:hover {
+    .level-item__title {
+      top: -100px;
+    }
+  }
+}

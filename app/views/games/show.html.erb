@@ -1,0 +1,12 @@
+<canvas id="canvas"></canvas>
+<script>
+  var data = <%= raw @game.map %>;
+  for (var i = 0; i < data.length; i++) {
+    data[i] = JSON.parse(data[i]);
+  }
+
+  level.data = data;
+  level.title = "<%= @game.name %>";
+  var game = new Clarity();
+  game.setup(level);
+</script>

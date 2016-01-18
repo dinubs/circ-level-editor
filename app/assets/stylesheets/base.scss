@@ -1,0 +1,47 @@
+.wrapper {
+  @include container();
+  max-width: 960px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.base-half {
+  @include span(6);
+}
+
+.base-inner {
+  padding: 1.5rem 3rem;
+  // background-color: white;
+  overflow: hidden;
+}
+
+.base-half--centered {
+  @include push(3);
+  overflow: hidden;
+}
+
+.base--white-bg {
+  background-color: white;
+  color: $background-color;
+}
+
+.base-header {
+  // background-color: white;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  border-bottom: 1px solid darken($background-color,1);
+
+  h1 {
+    margin: 2rem 0;
+  }
+
+  input.base-header__button {
+    float: right;
+    margin: 0;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    display: inline-block;
+  }
+}

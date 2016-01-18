@@ -1,0 +1,107 @@
+.level {
+  height: calc(100vh - 64px);
+  width: 100vw;
+  overflow: scroll;
+  padding: 100px;
+  background-color: #333;
+  
+  .level__pixel {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    transition: all 0.3s;
+    margin: -1px 1px;
+    
+    &:hover {
+      transform: scale(1.25);
+      // box-shadow: 0 0 5px rgba(black, 0.8);
+      z-index: 9999;
+    }
+  }
+  
+  .level__add--column, .level__add--row, .level__remove--row, .level__remove--column {
+    position: absolute;
+    width: calc(100% - 1px);
+    height: 25px;
+    text-align: center;
+    background-color: #555;
+    line-height: 25px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .level__add--row {
+    top: calc(100%);
+    left: 0;
+  }
+  
+  .level__add--column {
+    top: 0;
+    left: calc(100% + 27px);
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+  }
+  .level__remove--row {
+    bottom: calc(100% + 4px);
+  }
+  .level__remove--column {
+    top: 0;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+  }
+}
+
+.level__tile_chooser {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  background-color: #ddd;
+  padding: 5px;
+  z-index: 9999;
+
+  .level__tile_chooser__tile {
+    width: 25px;
+    height: 25px;
+    margin: 0 2px;
+    display: inline-block;
+    float: left;
+  }   
+}
+
+.level-form {
+  height: 64px;
+  background-color: #242424;
+  padding: 10px 5px;
+
+  a {
+    line-height: 43px;
+    display: inline-block;
+    @include font-size(2.4);
+    color: #fff;
+    padding: 0 10px;
+
+    &.logo {
+      font-weight: 900;
+      float: left;
+      z-index: 9999;
+    }
+  }
+
+  form {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  input {
+    display: inline-block;
+    max-width: 480px;
+    vertical-align: middle;
+    margin: 0 5px;
+    padding: 1rem;
+  }
+
+  .right {
+    width: auto;
+    text-align: right;
+  }
+}

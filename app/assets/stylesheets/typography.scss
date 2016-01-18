@@ -1,0 +1,25 @@
+a {
+  text-decoration: none;
+  color: $button-color;
+  &:hover {
+    color: darken($button-color, 10);
+    text-decoration: none;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0 10px;
+  color: white;
+  background-color: $button-color;
+  min-width: 99px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 43px;
+  height: 43px;
+  vertical-align: middle;
+  &:hover {
+    background-color: darken($button-color, 10);
+    color: white;
+  }
+}

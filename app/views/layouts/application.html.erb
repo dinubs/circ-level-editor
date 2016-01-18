@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CircLevelEditor</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if content_for? :navigation %>
+  <%= yield :navigation %>
+<% else %>
+  <%= render 'shared/navigation' %>
+<% end %>
+<div class="wrapper">
+  <%= render 'shared/flashes' %>
+</div>
+<%= yield %>
+
+</body>
+</html>

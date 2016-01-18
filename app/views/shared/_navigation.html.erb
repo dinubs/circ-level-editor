@@ -1,0 +1,13 @@
+<nav>
+  <div class="wrapper">
+    <%= link_to "Circ", root_path, :class => "logo" %>
+    <div class="right">
+      <% if current_user %>
+        <%= link_to "Create", new_game_path %>
+        <%= link_to "Logout", logout_path %>
+      <% else %>
+        <%= link_to "Login", login_path %>
+      <% end %>
+    </div>
+  </div>
+</nav>
