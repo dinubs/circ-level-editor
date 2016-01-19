@@ -1,0 +1,12 @@
+<%= link_to game_path(level) do %>
+  <div class="level-item">
+    <%= image_tag level.image_url, :class => "level-item__image" %>  
+    <div class="level-item__title">
+      <%= level.name %>
+      <div class="level-item__sub-text">
+        By: <%= level.user.username %><br />
+        <%= level.completions %> Completions
+      </div>
+    </div>
+  </div>
+<% end %>
