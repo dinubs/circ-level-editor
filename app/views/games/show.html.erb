@@ -1,3 +1,11 @@
+<% content_for :og_tags do %>
+  <meta property="og:title" content="<%= @game.name %> by <%= @game.user.username %>" />
+  <meta property="og:description" 
+    content="Circ Level Editor game, play levels made by the community and challenge your friends." />
+  <meta property="og:site_name" content="Circ Level Editor" />
+  <meta property="og:image" content="<%= @game.image_url %>" />
+<% end %>
+
 <canvas id="canvas"></canvas>
 <script>
   var data = <%= raw @game.map %>;

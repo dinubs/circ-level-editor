@@ -5,6 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <% if content_for? :og_tags %>
+    <%= yield :og_tags %>
+  <% else %>
+    <meta property="og:title" content="Circ Level Editor" />
+    <meta property="og:description" 
+      content="Circ Level Editor game, play levels made by the community and challenge your friends." />
+    <meta property="og:site_name" content="Circ Level Editor" />
+  <% end %>
 </head>
 <body>
 
