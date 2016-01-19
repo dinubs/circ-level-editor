@@ -41,7 +41,7 @@ var level = {
 
     "scripts": {
       "die": "this.reload_map()",
-      "next_level": "this.reload_map(); document.querySelector('.game-modal').classList.add('active');"
+      "next_level": "this.reload_map(); document.querySelector('.game_modal').classList.add('active');"
     }
 }
 CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight) {
