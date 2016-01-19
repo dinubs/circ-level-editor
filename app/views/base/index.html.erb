@@ -4,20 +4,7 @@
       <div class="base-header">
         <h1>All Games</h1>
       </div>
-      <% @levels.each do |level| %>
-        <%= link_to game_path(level) do %>
-          <div class="level-item">
-            <%= image_tag level.image_url, :class => "level-item__image" %>  
-            <div class="level-item__title">
-              <%= level.name %>
-              <div class="level-item__sub-text">
-                By: <%= level.user.username %><br />
-                <%= level.completions %> Completions
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
+      <%= render :partial => @levels, :as => :game %>
     </div>
   </div>
 </div>
