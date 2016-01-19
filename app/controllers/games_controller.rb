@@ -11,7 +11,7 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @game = Game.find(params[:id])
-    @games = Game.order('RANDOM()').limit(3)
+    # @games = Game.order('RANDOM()').limit(3)
   end
 
   def complete
