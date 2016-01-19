@@ -41,7 +41,7 @@ var level = {
 
     "scripts": {
       "die": "this.reload_map()",
-      "next_level": "window.location = window.location + '/complete'"
+      "next_level": "this.reload_map()"
     }
 }
 CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight) {
