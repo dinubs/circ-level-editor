@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   friendly_id :username, use: :slugged
 
   validates :username, :password, presence: :true
+  validates :username, uniqueness: :true
   has_many :games
 
 protected

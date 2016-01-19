@@ -12,10 +12,16 @@
 </script>
 
 <div class="game_modal">
-  <h1>Congratulations!!!</h1>
-  <p>You just beat <%= @game.name %> made by <%= @game.user.username %></p>
-  <p>Share with your friends: </p>
-  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="I just beat a level on Circ Level Editor, can you beat it too?" data-size="large" data-hashtags="circleveleditor">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <h1>Play Some Other Levels</h1>
+  <div class="game_modal__top">
+    <h1>Congratulations!!!</h1>
+    <p>You just beat <%= @game.name %> made by <%= link_to @game.user.username, user_path(@game.user.slug) %></p>
+    <p>Share with your friends: 
+    <a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="I just beat a level on Circ Level Editor, can you beat it too?" data-size="large" data-hashtags="circleveleditor">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </p>
+  </div>
+  <div class="game_modal__bottom">
+    <h1>Try Some Other Levels</h1>
+    <%= render :partial => @games, :as => :game %>
+  </div>
 </div>

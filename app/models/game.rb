@@ -19,6 +19,10 @@ class Game < ActiveRecord::Base
     "https://s3-us-west-2.amazonaws.com/circ-images/game__#{self.token}.jpg"
   end
 
+  def to_partial_path
+    'games/game_item'
+  end
+
   def create_artwork
     tile_colors = ["#333", "#888", "#555", "#C93232", "rgba(121, 220, 242, 0.4)", "#E373FA", "#ffc61e"]
     tile_size = 10

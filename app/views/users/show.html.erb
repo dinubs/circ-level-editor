@@ -1,2 +1,10 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="wrapper">
+  <div class="base">
+    <div class="base-inner">
+      <div class="base-header">
+        <h1><%= @user.username %>'s levels</h1>
+      </div>
+      <%= render :partial => @user.games, :as => :game %>
+    </div>
+  </div>
+</div>

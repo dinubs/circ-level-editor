@@ -1,7 +1,9 @@
 .level-item {
-  @include span(4);
-  padding: 0;
+  width: calc(33% - 20px);
+  margin: 10px;
+  display: inline-block;
   overflow: hidden;
+  text-align: left;
 
   img {
     width: 100%;

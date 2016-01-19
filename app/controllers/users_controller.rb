@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = user.find
+    @user = User.find_by_slug(params[:id])
   end
 
   def new
