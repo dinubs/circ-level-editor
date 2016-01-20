@@ -1,9 +1,14 @@
 .level-item {
-  width: calc(33% - 20px);
-  margin: 10px;
+  width: 100%;
+  margin: 10px 0;
   display: inline-block;
   overflow: hidden;
   text-align: left;
+
+  @include breakpoint($ipads){
+    width: calc(33% - 20px);
+    margin: 10px;
+  }
 
   img {
     width: 100%;

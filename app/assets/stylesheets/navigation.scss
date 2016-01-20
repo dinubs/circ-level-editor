@@ -3,6 +3,10 @@ nav {
   background-color: #242424;
   z-index: 9999;
 
+  @include breakpoint(max-width $ipads){
+    padding: 0 3rem;
+  }
+
   a {
     line-height: 64px;
     height: 64px;
